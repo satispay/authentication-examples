@@ -48,5 +48,5 @@ console.log(authorization);
 
 // send an HTTP request to the /g_business/v1/payments URL
 // the body must be equals to the $body variable
-// the $date variable must be sent as "date" header
-// the $authorization variable must be sent as "authorization" header
+// the date variable must be sent as "date" header
+// the authorization variable must be sent as "authorization" header
