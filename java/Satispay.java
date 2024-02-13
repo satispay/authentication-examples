@@ -90,8 +90,8 @@ public class Satispay {
 
     public static String signData(String message, String base64PrivateKey) {
         try {
-
             byte[] privateKeyBytes = Base64.getDecoder().decode(base64PrivateKey);
+
             PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(privateKeyBytes);
             KeyFactory keyFactory = KeyFactory.getInstance("RSA");
             PrivateKey privateKey = keyFactory.generatePrivate(keySpec);
@@ -125,9 +125,7 @@ public class Satispay {
             String base64Key = pemText;
 
             if (matcher.find()) {
-                base64Key = matcher.group(1)
-                                        .replace("\r", "")
-                                        .replace("\n", "");;
+                base64Key = matcher.group(1).replace("\r", "").replace("\n", "");;
             }
     
             return base64Key;
