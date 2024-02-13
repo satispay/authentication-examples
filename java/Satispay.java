@@ -40,7 +40,11 @@ public class Satispay {
 
         SimpleDateFormat sdf = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss Z");
         String date = sdf.format(new Date());
-        
+
+        System.out.println();
+        System.out.println("date:");
+        System.out.println(date);
+
         String message = "(request-target): post /g_business/v1/payments\n" +
                          "host: staging.authservices.satispay.com\n" +
                          "date: " + date + "\n" +
