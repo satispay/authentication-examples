@@ -1,0 +1,10 @@
+#! /bin/bash
+
+# Create logs directory if it doesn't exist
+mkdir -p logs
+
+# Compile
+javac -cp ".:libs/json-20240205.jar" Satispay.java
+
+# Run
+java -cp ".:libs/json-20240205.jar" Satispay >> "logs/output_$(date +"%Y%m%d%H%M%S").txt" 2>&1
