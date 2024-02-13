@@ -7,4 +7,4 @@ mkdir -p logs
 javac -cp ".:libs/json-20240205.jar" Satispay.java
 
 # Run
-java -cp ".:libs/json-20240205.jar" Satispay >> "logs/output_$(date +"%Y%m%d%H%M%S").txt" 2>&1
+java -cp ".:libs/json-20240205.jar" Satispay 2>&1 | tee "logs/output_$(date +"%Y%m%d%H%M%S").txt"
