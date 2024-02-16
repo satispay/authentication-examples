@@ -73,3 +73,8 @@ authorization = f'Signature keyId="{key_id}", algorithm="rsa-sha256", headers="(
 print()
 print("authorization:")
 print(authorization)
+
+# Send an HTTP request to the /g_business/v1/payments URL
+# The body must be equal to the 'body' variable
+# The 'date' variable must be sent as the "date" header
+# The 'authorization' variable must be sent as the "authorization" header
