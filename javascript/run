@@ -3,5 +3,11 @@
 # Create logs directory if it doesn't exist
 mkdir -p logs
 
+# Check if Node.js is installed
+if ! which node &> /dev/null; then
+    echo "Error: node is not installed."
+    exit 1
+fi
+
 # Run
 node Satispay.js 2>&1 | tee "logs/output_$(date +"%Y%m%d%H%M%S").txt"

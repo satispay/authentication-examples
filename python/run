@@ -9,7 +9,7 @@ if command -v python3 &>/dev/null; then
 elif command -v python &>/dev/null; then
     PYTHON=python
 else
-    echo "Error: Python or Python3 is not installed."
+    echo "Error: python or python3 is not installed."
     exit 1
 fi
 
