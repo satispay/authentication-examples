@@ -1,0 +1,17 @@
+#! /bin/bash
+
+# Create logs directory if it doesn't exist
+mkdir -p logs
+
+# Check if python is installed
+if command -v python3 &>/dev/null; then
+    PYTHON=python3
+elif command -v python &>/dev/null; then
+    PYTHON=python
+else
+    echo "Error: Python or Python3 is not installed."
+    exit 1
+fi
+
+# Run
+$PYTHON Satispay.py 2>&1 | tee "logs/output_$(date +"%Y%m%d%H%M%S").txt"
