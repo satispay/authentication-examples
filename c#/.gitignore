@@ -1,0 +1,8 @@
+
+logs/
+
+bin/
+
+obj/*
+obj/**/*.cache
+obj/Debug
