@@ -49,6 +49,10 @@ class Satispay
 
         string signature = signData(message, privateKey);
 
+        Console.WriteLine();
+        Console.WriteLine("signature:");
+        Console.WriteLine(signature);
+
         string keyId = readFile("KeyId.txt"); // your KeyId
         string authorization = $"Authorization: Signature keyId=\"{keyId}\", algorithm=\"rsa-sha256\", headers=\"(request-target) host date digest\", signature=\"{signature}\"";
         

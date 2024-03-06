@@ -63,6 +63,10 @@ public class Satispay {
 
         String signature = signData(message, privateKey);
 
+        System.out.println();
+        System.out.println("signature:");
+        System.out.println(signature);
+
         String keyId = readFile("KeyId.txt");
         String authorization = String.format("Signature keyId=\"%s\", algorithm=\"rsa-sha256\", headers=\"(request-target) host date digest\", signature=\"%s\"", keyId, signature);
     

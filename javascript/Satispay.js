@@ -40,6 +40,9 @@ sign.update(message);
 const signatureRaw = sign.sign(privateKey, 'base64');
 const signature = Buffer.from(signatureRaw, 'base64').toString('base64');
 
+console.log("\nsignature:");
+console.log(signature);
+
 const keyId = fs.readFileSync('KeyId.txt', 'utf-8');
 const authorization = "Signature keyId=\"" + keyId.trim() + "\", algorithm=\"rsa-sha256\", headers=\"(request-target) host date digest\", signature=\"" + signature + "\"";
 

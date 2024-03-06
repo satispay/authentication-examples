@@ -35,6 +35,9 @@ echo "$private_key"
 
 signature=$(printf "%s" "$message" | openssl dgst -sign private.pem -sha256 -binary | base64 -w 0)
 
+echo "\nsignature:"
+echo "$signature"
+
 keyId=$(cat KeyId.txt)
 
 authorization="Signature keyId=\"$keyId\", algorithm=\"rsa-sha256\", headers=\"(request-target) host date digest\", signature=\"$signature\""
