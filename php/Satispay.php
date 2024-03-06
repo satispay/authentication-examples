@@ -37,6 +37,9 @@ echo $privateKey . "\n";
 openssl_sign($message, $signatureRaw, $privateKey, OPENSSL_ALGO_SHA256);
 $signature = base64_encode($signatureRaw);
 
+echo "\nsignature:\n";
+echo $signature . "\n";
+
 $keyId = file_get_contents('KeyId.txt'); // your KeyId
 $authorization = "Signature keyId=\"$keyId\", algorithm=\"rsa-sha256\", headers=\"(request-target) host date digest\", signature=\"$signature\"";
 
