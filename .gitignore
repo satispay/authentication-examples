@@ -1,0 +1,6 @@
+# Ignore development environment directories
+.idea/
+.vscode/
+
+# Ignore macOS specific files
+.DS_Store
